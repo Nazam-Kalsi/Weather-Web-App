@@ -1,4 +1,3 @@
-// import {forcastData} from "../fetch.js";
 
 let item=localStorage.getItem('data');
 let data=JSON.parse(item)
@@ -6,7 +5,6 @@ console.log(data)
 
 let details=(c)=>{
     document.querySelectorAll('header p')[0].innerHTML=c.location.name;
-    // document.querySelectorAll('header p')[1].innerHTML=c.location.region;
     document.querySelectorAll('header p')[1].innerHTML=`(${c.location.country})`;
     document.querySelector("#main >:nth-child(1) p").innerHTML=`Max. Temperature : `;
     document.querySelector("#main >:nth-child(1) span").innerHTML=`${c.forecast.forecastday[0].day.maxtemp_c}ºC`;
