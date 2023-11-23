@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/weather.css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/error.css">
+    <link rel="shortcut icon" href="./pics/fav.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Prompt:wght@600;800&family=Rubik+Mono+One&family=Rubik+Wet+Paint&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <img src="./pics/clouds.png" alt="">
+        <img src="./pics/more cloudy night.png" alt="">
+        <img src="./pics/little rain.png" alt="">
+        <img src="./pics/snow.png" alt="">
+    </div>
+
+    <div id="error" class="error">
+        <div class="error-card">
+          <div class="img"><svg aria-hidden="true" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg></div>
+          <div class="msg">
+             <span class="title">Error</span>
+             <p class="message">Something went wrong or it may be misspelled city name.</p>
+          </div>
+           <div class="actions">
+             <button class="again" type="button">Enter Again</button>
+          </div>
+        </div>
+        </div>
+
+    <header class="flexAJ">
+        <p class="heading-animation">WEATHER</p>
+        <div class="input-animation">
+            <input type="text" id="search" class="shadowup" autocomplete="off">
+            <label for="search">SEARCH CITY NAME</label>
+                
+                <!-- <div id="inputtask">
+                    <div id="placeholder">Enter Your Task Here...</div>
+                    <input type="text" name="tasktodo" id="tasktodo">
+                 </div> -->
+
+        </div>
+    </header>
+    <section>
+        <div>
+            <div id="today" class="flexA shadowup loading  display">
+                <div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <img src="./pics/thermometer.png" alt="temperature icon">
+                </div>
+                <img src="./pics/Sun.png" alt="picture">
+            </div>
+            <div id="hourly" class="flexA shadowup loading  display">
+                <div></div>
+            </div>
+            <div id="info" class="shadowup loading  display">
+                <div class="more-info shadowdown">
+                    <p>Wind speed</p>
+                    <div>
+                        <img src="./pics/wind.png" alt="Wind-image">
+                        <div>
+                            <span></span>
+                            <p>Kph</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-info shadowdown ">
+                    <p>humidity</p>
+                    <div>
+                        <img src="./pics/humidity.png" alt="Wind-image">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="more-info shadowdown">
+                    <p>U.V. Index</p>
+                    <div>
+                        <img src="./pics/uv.png" alt="Wind-image">&nbsp;
+                        <span></span>
+                    </div>
+                </div>
+                <div class="more-info shadowdown">
+                    <p>visibility</p>
+                    <div>
+                        <img src="./pics/visibility.png" alt="Wind-image">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="more-info shadowdown">
+                    <p> us-epa-index</p>
+                    <div>
+                        <img src="./pics/wind.png" alt="Wind-image">
+                        <span></span>
+                    </div>
+                </div>
+                <button class="more-info shadowup">Show more</button>
+            </div>
+        </div>
+        <div id="forcast" class="shadowup loading  display">
+            <div class="shadowdown">
+                <p>Tomorrow</p>
+                <div>
+                    <img src="./pics/sun.png" alt="icon">
+                    <p>Moderate or heavy freezing rain</p>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="shadowdown">
+                <p></p>
+                <div>
+                    <img src="./pics/sun.png" alt="icon">
+                    <p>clear</p>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="shadowdown">
+                <p></p>
+                <div>
+                    <img src="./pics/sun.png" alt="icon">
+                    <p>clear</p>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="shadowdown">
+                <p></p>
+                <div>
+                    <img src="./pics/sun.png" alt="icon">
+                    <p>clear</p>
+                </div>
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="./JS/w.js"></scriptt>
+</body>
+
+</html>

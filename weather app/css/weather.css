@@ -1,0 +1,364 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  cursor: default;
+}
+@media only screen and (max-width: 1229px) {
+  body section{
+    flex-direction: column;
+  }
+  section > div{
+    width: 90%;  
+    margin-bottom: 30px;
+  }
+  #today{
+    width: 100%;
+
+  }
+}
+@media only screen and (max-width: 638px) 
+{
+  header{
+    flex-direction: column;
+  }
+}
+
+
+
+.flexA {
+  display: flex;
+  align-items: center;
+}
+.flexAJ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:root {
+  --bgc: #dde1e7;
+  --tcolor: grey;
+}
+.shadowup {
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+    5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+.shadowdown {
+  box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
+    inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+/* ------------------------body-------------------------- */
+
+body {
+  background-color: var(--bgc);
+  font-family: 'Dosis', sans-serif;
+}
+
+
+/* -------------------header-------------------- */
+
+header {
+  gap: 45px;
+  margin: 0px 10px;
+}
+header p {
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+font-family: 'Prompt', sans-serif;
+font-family: 'Rubik Mono One', monospace;
+}
+
+header > div {
+  position: relative;
+}
+header div input {
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--bgc);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: rgb(0, 66, 110);
+  padding: 10px 20px 6px 20px;
+  box-sizing: unset;
+  font-family: Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+header div input:hover {
+  box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
+    inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+header div input:is(:active, :focus) {
+  outline: none;
+}
+
+header label {
+  padding: 0px 3px;
+  position: absolute;
+  /* z-index: 2; */
+  left: 10px;
+  top: 0.7em;
+  color: var(--tcolor);
+  font-size: 1em;
+  font-family: Calibri, "Trebuchet MS", sans-serif;
+  transition: all 200ms ease-in-out;
+}
+header input:focus + label {
+  /* z-index: -1; */
+  left: -6px;
+  top: -4px;
+  scale: 0.8;
+  color: rgb(66, 64, 64);
+}
+
+/*-------------------------------------- root--------------------------- */
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+section > div {
+  width: 45%;
+  background-color: var(--bgc);
+}
+
+/* --------------------------------------- #root div :-- today weather card---------------------------------- */
+
+#today {
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 5px 10px;
+
+}
+
+#today img {
+  width: 8em;
+}
+#today div {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 8px 0px 14px;
+  height: 9em;
+  text-align: center;
+  position: relative;
+}
+#today div > :nth-child(1) {
+  font-size: 2em;
+  line-height: 21px;
+
+}
+#today div > :nth-child(1) span {
+  font-size: 0.5em;
+  color: var(--tcolor);
+}
+
+#today div > :nth-child(2) {
+  font-size: 1.2em;
+  color: gray;
+}
+#today div > :nth-child(2) span {
+  color: black;
+}
+
+#today div > :nth-child(3) {
+  align-self: center;
+  font-size: 4em;
+  margin-top: 12px;
+}
+#today div > :nth-child(4) {
+  width: 33px;
+  height: 47px;
+  position: absolute;
+  bottom: 3px;
+  left: -15px;
+}
+
+/* ------------------------hourly weather----------------------------- */
+#hourly {
+  width: 100%;
+  height: 11em;
+  margin-top: 20px;
+  overflow: scroll;
+  overflow-y: hidden;
+  border-radius: 22px;
+  background-color: var(--bgc);
+}
+#hourly::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+  -webkit-appearance: none;
+}
+#hourly::-webkit-scrollbar-track {
+  background: transparent;
+}
+#hourly::-webkit-scrollbar-thumb {
+  background-color: rgba(161, 170, 169, 0.44);
+  border: 1px solid #fff;
+  border-radius: 1rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  height: 90%;
+  width: 10em;
+  border-radius: 30px;
+  background: var(--bgc);
+  box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
+    inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+.card:hover {
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+    5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+.card img {
+  width: 10em;
+  height: 5em;
+  padding: 0px 2rem 0px 2rem;
+
+}
+.card img + p {
+  color: rgb(2, 103, 165);
+  font-size: 25px;
+  font-weight: 600;
+}
+.card :nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* -----------------------------more info-------------------------------- */
+#info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0px 2em;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  height: 11em;
+  border-radius: 22px;
+  background-color: var(--bgc);
+}
+#info img {
+  height: 40px;
+  width: 40px;
+  margin-right: 14px;
+}
+#info p {
+  color: var(--tcolor);
+}
+
+.more-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 2px;
+  justify-content: center;
+  height: 40%;
+  width: 25%;
+  align-items: center;
+  border: none;
+  border-radius: 22px;
+}
+#info button {
+  position: relative;
+  overflow: hidden;
+  font-size: 1em;
+  background: transparent;
+  cursor: pointer;
+}
+#info button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -60%;
+  right: -60%;
+  clip-path: circle(10% at 50% 50%);
+  height: 140%;
+  width: 140%;
+  background: skyblue;
+  transition: all 1s ease-in-out;
+}
+
+#info button:hover::before {
+  right: 0%;
+  top: 0%;
+  clip-path: circle(100% at 50% 50%);
+}
+#info button:active {
+  font-size: 1rem;
+  scale: 0.95;
+}
+#info .more-info > p {
+  margin-top: 6px;
+}
+.more-info p + div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.more-info p + div div {
+  text-align: center;
+}
+.more-info p + div span {
+  font-size: 25px;
+}
+.more-info p + div p {
+  position: relative;
+  top: -5px;
+}
+.more-info:hover {
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+    5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+/* ----------------------forcast---------------------- */
+#forcast {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 22px;
+  background-color: var(--bgc);
+}
+#forcast > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20%;
+  width: 90%;
+  border-radius: 22px;
+  font-size: 24px;
+  font-weight: 200;
+}
+#forcast > div:hover {
+  box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+    5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+
+#forcast > div div {
+  /* image +condition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+#forcast > div div p{
+  color: var(--tcolor);
+}
+
+#forcast > div > :nth-child(1) {
+  width: 3em;
+}
+
+
+
+
