@@ -295,27 +295,27 @@ function imagechange(code,d) {
 
 
     if (code == 1000) {
-      if (d > 7 && d < 18) {
+      if (d > 5 && d < 18) {
         src = "./pics/sun.png";
       }
       else{
-        src="./pics/clear night.png";
+        src = "./pics/moon.png";
       }
     } 
     else if (code == 1003) {
-      if (d > 7 && d < 18) {
-        src = "./pics/sun2cloud.png";
+      if (d > 5 && d < 18) {
+        src = "./pics/moon2cloud.png";
       }
       else{
-        src="./pics/moon2cloud.png";
+        src = "./pics/sun2cloud.png";
       }
     } 
     else if (code == 1006) {
-      if (d > 7 && d < 18) {
-        src = "./pics/sun1cloud.png";
+      if (d > 5 && d < 18) {
+        src = "./pics/moon2cloud.png";
       }
       else{
-        src="./pics/more cloudy cloud.png";
+        src = "./pics/sun1cloud.png";
       }
     } else if (code == 1009) {
       src = "./pics/clouds.png";

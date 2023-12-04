@@ -73,9 +73,12 @@ if(j.error){  errorbtn.style.display='block'
   let name = today.querySelectorAll("p")[0];
   let rain = today.querySelectorAll("p")[1];
   let temp = today.querySelectorAll("p")[2];
+  let T=new Date(j.location.localtime).getHours();
   // calling imagechange function from condition.js file
+
   let code=j.forecast.forecastday[0].day.condition.code;
-  let src = imagechange(code);
+  // let t = new Date(time).getHours();
+  let src = imagechange(code,T);
   image.src = src; //giving src to image of today's div
   name.innerHTML = `${j.location.name} <span>(${j.location.country})</span>`; //city name
   rain.innerHTML = //raining percentage
@@ -89,7 +92,7 @@ if(j.error){  errorbtn.style.display='block'
   hourly.innerHTML = "";
   let timely = j.forecast.forecastday[0].hour; //hourly time interval of 1 hour
   for (const key in timely) {
-    //geting object as 0,1,2,3....23
+    //geting object having 0,1,2,3....23 as keys
     let time = timely[key].time; //selecting time (format is 2023-11-09 00:00) --string
     let t = new Date(time).getHours(); //convert into date and get Hours from it.
     let nd = new Date().getHours(); // get current time's hour.
@@ -138,7 +141,7 @@ let moreinfo = async (j) => {
   forecast(j);
 };
 // ------------------------forcast weather------------------------------------
-let forecastdiv = document.getElementById("forcast");
+let forecastdiv = document.getElementById("forcast");      //To get day name in forecast cards
 let dayname = [
   "Sunday",
   "Monday",
@@ -157,7 +160,8 @@ let forecast = (j) => {
     let condition=document.querySelector(`#forcast >:nth-child(${i})>div p`);
     let d = new Date(j.forecast.forecastday[`${i}`].date);
     let code=j.forecast.forecastday[`${i}`].day.condition.code;
-    let src = imagechange(code);
+    let T=12;  //to get image of sun instead of moon in forecast card. 
+    let src = imagechange(code,T);
     condition.innerHTML= (`${date}`>19 && j.forecast.forecastday[`${i}`].day.condition.text=='Sunny')?"Clear":(j.forecast.forecastday[`${i}`].day.condition.text); 
     image.src = src;
     if (i == 1) {
@@ -172,8 +176,6 @@ let forecast = (j) => {
 let button = document.querySelector("#info button").addEventListener("click", () => {
   window.open("./todaydetails.html", "_blank");
 });
-// let errorbtn=document.getElementById('error');
-// console.log(errorbtn)
 document.getElementById('error').addEventListener('click',()=>{
   errorbtn.style.display='none'
 })
